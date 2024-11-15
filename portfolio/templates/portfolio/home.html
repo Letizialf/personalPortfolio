@@ -13,6 +13,20 @@
   <body>
     <div class="container mt-3">
       <h1>Welcome to my Portfolio</h1>
+      {% load static %}
+      <img
+        src="{% static 'portfolio/TIMER - 1.png' %}"
+        alt="Logo Michi Latte"
+        width="180px"
+        height="100px"
+      />
+
+      <a
+        href="{% static 'portfolio/Tarefa2_9 formularios.pdf' %}"
+        target="_blank"
+        >Enlace</a
+      >
+
       {% for project in projects %}
       <h2>{{ project.title }}</h2>
       <ul class="list-group">
