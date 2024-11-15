@@ -12,16 +12,17 @@
   </head>
   <body>
     <div class="container mt-3">
-      <h1>Welcome to my Blog</h1>
+      <h1 class="h1">Welcome to my Blog</h1>
+      <hr>
+      <br>
       {% for blog in Blog %}
       <h2>{{ blog.title }}</h2>
-      <h3 class="text-primary">{{ blog.date }}</h3>
+      <h5 class="text-primary">{{ blog.date }}</h3>
       <ul class="list-group">
         <li class="list-group-item">{{ blog.description }}</li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
       </ul>
       {% endfor %}
+      <hr>
     </div>
   </body>
 </html>
