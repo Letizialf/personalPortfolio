@@ -15,12 +15,11 @@
       <h1>Welcome to my Blog</h1>
       {% for blog in Blog %}
       <h2>{{ blog.title }}</h2>
+      <h3 class="text-primary">{{ blog.date }}</h3>
       <ul class="list-group">
-        <li class="list-group-item">{{ project.description }}</li>
+        <li class="list-group-item">{{ blog.description }}</li>
         <li class="list-group-item"></li>
-        <li class="list-group-item">
-          <p>{{blog.description}}</p>
-        </li>
+        <li class="list-group-item"></li>
       </ul>
       {% endfor %}
     </div>
