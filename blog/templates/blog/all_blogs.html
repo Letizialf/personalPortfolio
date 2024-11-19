@@ -3,16 +3,18 @@
       <h1 class="h1">Welcome to my Blog Page</h1>
       <hr>
       <br>
-      <h2 class="text-warning">This page has uploaded {{ Blog.count }} blog{{Blog.count|pluralize}}</h2>
+      <h3 class="text-warning">This page has uploaded {{ Blog.count }} blog{{Blog.count|pluralize}}</h3>
       <br>
       {% for blog in Blog %}
-      <h2>{{ blog.title }}</h2>
-      <a href="{% url 'blog:detail' blog.id %}"><b>{{ blog.title }}</b></a>
-      <h5 class="text-primary">{{ blog.date | date:'M d Y' | upper}}</h3>
-      <ul class="list-group">
-        <li class="list-group-item">{{ blog.description |safe| truncatechars:100}}</li>
-      </ul>
+      <div class="row justify-content-center my-3">
+        <div class="col-md-10">
+          <a href="{% url 'blog:detail' blog.id %}">
+            <h2>{{ blog.title }}</h2>
+          </a>
+          <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
+          <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+        </div>
+      </div>
       {% endfor %}
-      <hr>
-    </div>
-{% endblock %}
+      
+      {% endblock %}

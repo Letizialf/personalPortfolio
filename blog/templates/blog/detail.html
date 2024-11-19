@@ -1,8 +1,7 @@
-{% extends 'portfolio/base.html' %} {% block content %}
+{% extends 'portfolio/base.html' %} {% load static %} {% block content %}
 <div class="container mt-3">
-  <h1>{{blog.title}}</h1>
-  <h2>{{blog.date|date:'F jS Y'}}</h2>
+  <h1 class="text-center mt-5" id="blogdetailtitle">{{blog.title}}</h1>
+  <h5 class="text-center text-muted mb-5">{{blog.date|date:'F jS Y'}}</h5>
   <p>{{blog.description|safe }}</p>
 </div>
 {% endblock %}
-<!-- <p class="text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">O ID do blog ó que quere acceder é: <p class="text-danger">{{ id }}</p></p> -->

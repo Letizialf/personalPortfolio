@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Personal Blog</title>
+    <title>Personal Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -14,7 +14,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Portfolio</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Portfolio</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -29,14 +29,13 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% static 'portfolio/resume.pdf' %}"
-                >Resume</a
+              <a class="nav-link" href="{% static 'portfolio/resume.pdf' %}" target="_blank"              >Resume</a
               >
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="https://www.linkedin.com/in/nick-walter/"
+                href="https://www.linkedin.com"
                 target="_blank"
                 >LinkedIn</a
               >
@@ -44,7 +43,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="https://twitter.com/ZappyCode"
+                href="https://x.com"
                 target="_blank"
                 >Twitter</a
               >
