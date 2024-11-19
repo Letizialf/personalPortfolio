@@ -1,34 +1,45 @@
 {% extends 'portfolio/base.html' %} {% block content %} {% load static %}
-<div class="container mt-3">
-  <h1>Welcome to my Portfolio</h1>
-  <img
-    src="{% static 'portfolio/TIMER - 1.png' %}"
-    alt="Logo Michi Latte"
-    width="180px"
-    height="100px"
-  />
-
-  <a href="{% static 'portfolio/Tarefa2_9 formularios.pdf' %}" target="_blank"
-    >Enlace</a
-  >
-
-  {% for project in projects %}
-  <h2>{{ project.title }}</h2>
-  <ul class="list-group">
-    <li class="list-group-item">{{ project.description }}</li>
-    <li class="list-group-item">
-      <img
-        src="{{ project.image.url }}"
-        alt="{{ project.description }}"
-        height="80"
-        width="80"
-      />
-    </li>
-    {% if project.url %}
-    <li class="list-group-item">
-      <a href="{% url 'blog:all_blogs' %}">BLOG</a>
-    </li>
-    {% endif %}
-  </ul>
-  {% endfor %} {% endblock %}
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/woman.png' %}" class="img-fluid" />
+  </div>
 </div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">
+      Hi! My name is Letizia and I'm a new web developer 😊
+    </h1>
+  </div>
+</div>
+<h2 class="mt-5 ms-3">Portfolio</h2>
+<hr />
+<!-- <a href="{% static 'portfolio/Tarefa2_9 formularios.pdf' %}" target="_blank"
+    >Enlace</a
+  > -->
+
+<div class="row ms-1 mb-2 me-2">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+    {{ project.title }}
+    <ul class="list-group">
+      <li class="list-group-item">{{ project.description }}</li>
+      <li class="list-group-item">
+        <img
+          src="{{ project.image.url }}"
+          alt="{{ project.description }}"
+          class="img-fluid mb-2"
+        />
+      </li>
+      {% if project.url %}
+      <li class="list-group-item">
+        <a href="{{ project.url }}" target="_blank">Entry</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+<!-- <a href="{% url 'blog:all_blogs' %}">BLOG</a> -->
