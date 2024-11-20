@@ -1,20 +1,21 @@
-{% extends 'portfolio/base.html' %} {% block content %} 
-    <div class="container mt-3">
-      <h1 class="h1">Welcome to my Blog Page</h1>
-      <hr>
-      <br>
-      <h3 class="text-warning">This page has uploaded {{ Blog.count }} blog{{Blog.count|pluralize}}</h3>
-      <br>
-      {% for blog in Blog %}
-      <div class="row justify-content-center my-3">
-        <div class="col-md-10">
-          <a href="{% url 'blog:detail' blog.id %}">
-            <h2>{{ blog.title }}</h2>
-          </a>
-          <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-          <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
-        </div>
-      </div>
-      {% endfor %}
-      
-      {% endblock %}
+{% extends 'portfolio/base.html' %} {% block content %}
+<div class="container mt-3">
+  <h1 class="h1">Welcome to my Blog Page</h1>
+  <hr />
+  <br />
+  <h3 class="text-warning">
+    This page has uploaded {{ Blog.count }} blog{{Blog.count|pluralize}}
+  </h3>
+  <br />
+  {% for blog in Blog %}
+  <div class="row justify-content-center my-3">
+    <div class="col-md-10">
+      <a href="{% url 'blog:detail' blog.id %}">
+        <h2>{{ blog.title }}</h2>
+      </a>
+      <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
+      <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+    </div>
+  </div>
+  {% endfor %} {% endblock %}
+</div>
